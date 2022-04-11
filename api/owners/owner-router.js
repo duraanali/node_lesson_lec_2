@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 
 const ownersDB = require('./owner-model');
@@ -14,6 +15,11 @@ router.get('/', async (req, res) => {
       res.status(500).json({ message: `Failed to get owners ${err}` });
     }
 });
+
+router.get('/hi', (req, res) => {
+      
+        res.status(200).json({ message: `Hello From ${process.env.SAY_HI}` });
+  });
 
 // Get Single Owner
 router.get('/:id', async (req, res) => {
