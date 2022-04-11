@@ -7,7 +7,7 @@ const server = require('./api/server.js');
 
 // ENVIRONMENT VARIABLES - STATIC AND DYNAMIC
 
-const port = process.env.PORT | 4000
+const port = process.env.PORT || 4000
 
 console.log(`Listening on port ${port}`);
 
